@@ -1,7 +1,7 @@
-/* Analiza Soratorio — UI fills/borders/shadows: palette only (#eba0a0 · #edc999 · #e5e7a4 · #b6e3a8). Text uses neutrals below. */
+/* Analiza Soratorio — UI fills/borders/shadows: palette only (#fdc6c6 · #edc999 · #e5e7a4 · #b6e3a8). Text uses neutrals below. */
 
 :root {
-  --palette-petal: #eba0a0;
+  --palette-petal: #fdc6c6;
   --palette-honey: #edc999;
   --palette-sage: #e5e7a4;
   --palette-mint: #b6e3a8;
@@ -14,7 +14,7 @@
   /* UI tokens — rgba channels restricted to the four palette hues */
   --color-border: rgba(237, 201, 153, 0.65);
   --color-accent-dim: rgba(237, 201, 153, 0.45);
-  --shadow-soft: 0 16px 40px rgba(235, 160, 160, 0.22);
+  --shadow-soft: 0 16px 40px rgba(253, 198, 198, 0.22);
   --shadow-lift: 0 20px 48px rgba(182, 227, 168, 0.3);
 
   --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
@@ -71,7 +71,7 @@ body {
   color: var(--color-body);
   background-color: var(--palette-sage);
   background-image:
-    radial-gradient(ellipse 90% 60% at 10% 0%, rgba(235, 160, 160, 0.35), transparent 50%),
+    radial-gradient(ellipse 90% 60% at 10% 0%, rgba(253, 198, 198, 0.35), transparent 50%),
     radial-gradient(ellipse 70% 50% at 100% 20%, rgba(182, 227, 168, 0.4), transparent 55%),
     linear-gradient(180deg, var(--palette-mint) 0%, var(--palette-sage) 45%, var(--palette-honey) 100%);
   min-height: 100vh;
@@ -88,8 +88,8 @@ body::before {
     -12deg,
     transparent,
     transparent 14px,
-    rgba(235, 160, 160, 0.08) 14px,
-    rgba(235, 160, 160, 0.08) 15px
+    rgba(253, 198, 198, 0.08) 14px,
+    rgba(253, 198, 198, 0.08) 15px
   );
 }
 
@@ -629,7 +629,7 @@ body::before {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, transparent, rgba(235, 160, 160, 0.45), rgba(237, 201, 153, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(253, 198, 198, 0.45), rgba(237, 201, 153, 0.5), transparent);
   transform: skewX(-10deg);
   opacity: 0.7;
 }
