@@ -219,13 +219,14 @@
           <a href="tel:+17579683769" class="btn btn-primary btn-block" aria-label="Call now: 757-968-3769">Call Now: (757) 968-3769</a>
           <address class="contact-address">
             <strong>Analiza Soratorio — Financial Professional</strong><br />
-            410 Professional Place, Suite 200<br />
             Chesapeake, Virginia 23320
           </address>
           <p class="contact-area"><strong>Service area:</strong> Chesapeake, Great Bridge, Greenbrier, Hickory, and the greater Hampton Roads region—including Norfolk, Portsmouth, Suffolk, and Virginia Beach.</p>
           <p class="contact-hours"><strong>Hours:</strong> Monday–Friday 9:00 a.m.–5:00 p.m. ET · Evenings by appointment</p>
         </div>
-        <form class="quote-form" id="quote-form" action="#" method="post" aria-label="Request a free insurance consultation">
+        <form class="quote-form" id="quote-form" method="post" aria-label="Request a free insurance consultation">
+          <input type="hidden" name="_subject" value="Website quote request — Home page" />
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="form-honeypot" aria-hidden="true" />
           <label for="q-name">Name</label>
           <input type="text" id="q-name" name="name" autocomplete="name" required placeholder="Your full name" />
 
@@ -251,7 +252,7 @@
         <span class="logo-mark logo-mark--footer" aria-hidden="true">AS</span>
         <div>
           <strong>Analiza Soratorio</strong>
-          <p class="footer-tag">Life insurance &amp; annuities · Chesapeake, Virginia</p>
+          <p class="footer-tag">Life insurance &amp; annuities · Chesapeake, Virginia 23320</p>
         </div>
       </div>
       <nav class="footer-nav" aria-label="Footer">
@@ -270,6 +271,7 @@
     </div>
   </footer>
 
+  <script src="lead-config.js"></script>
   <script src="analytics.js"></script>
   <script src="main.js" defer></script>
 </body>

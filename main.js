@@ -42,12 +42,66 @@
     });
   }
 
-  if (form && formStatus) {
+  function wireLeadForm(formId, statusId, sourceTag) {
+    var form = document.getElementById(formId);
+    var formStatus = document.getElementById(statusId);
+    if (!form || !formStatus) return;
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      formStatus.textContent =
-        "Thank you — your message is a demo preview. Connect this form to your email or CRM, or call (757) 968-3769.";
-      form.reset();
+      var endpoint =
+        typeof window.LEAD_FORM_ENDPOINT === "string" ? window.LEAD_FORM_ENDPOINT.trim() : "";
+      var fd = new FormData(form);
+      if (sourceTag) fd.set("form_source", sourceTag);
+
+      var phone = "(757) 968-3769";
+
+      function thanksNoEmail() {
+        formStatus.textContent =
+          "Thank you. Please call " +
+          phone +
+          " so we can connect right away while email delivery is being finalized on this site.";
+        form.reset();
+      }
+
+      function thanksOk() {
+        formStatus.textContent =
+          "Thank you—your message was sent. We’ll reply shortly. Questions? Call " + phone + ".";
+        form.reset();
+      }
+
+      function thanksError() {
+        formStatus.textContent =
+          "We couldn’t send that just now. Please call " + phone + " or try again in a few minutes.";
+      }
+
+      if (!endpoint) {
+        thanksNoEmail();
+        return;
+      }
+
+      formStatus.textContent = "Sending…";
+
+      fetch(endpoint, {
+        method: "POST",
+        body: fd,
+        headers: { Accept: "application/json" },
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error("bad status");
+          return res.json().catch(function () {
+            return {};
+          });
+        })
+        .then(function () {
+          thanksOk();
+        })
+        .catch(function () {
+          thanksError();
+        });
     });
   }
+
+  wireLeadForm("quote-form", "form-status", "home_contact");
+  wireLeadForm("about-quote-form", "about-form-status", "about_whole_life");
 })();

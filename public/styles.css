@@ -955,6 +955,7 @@ main > section:not(.hero) {
 }
 
 .quote-form {
+  position: relative;
   background: rgba(152, 160, 134, 0.25);
   border: 1px solid rgba(223, 204, 177, 0.8);
   border-radius: var(--radius-xl);
@@ -1005,6 +1006,14 @@ main > section:not(.hero) {
   color: var(--color-body);
   min-height: 1.25rem;
   margin: 0;
+}
+
+.form-honeypot {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
 }
 
 /* ——— Footer ——— */
