@@ -1,21 +1,21 @@
-/* Analiza Soratorio — UI fills/borders/shadows: palette only (#fdc6c6 · #edc999 · #e5e7a4 · #b6e3a8). Text uses neutrals below. */
+/* Analiza Soratorio — UI fills/borders/shadows: palette (#98a086 · #a76d5e · #dfccb1). Text uses neutrals below. */
 
 :root {
-  --palette-petal: #fdc6c6;
-  --palette-honey: #edc999;
-  --palette-sage: #e5e7a4;
-  --palette-mint: #b6e3a8;
+  --palette-petal: #a76d5e;
+  --palette-honey: #dfccb1;
+  --palette-sage: #98a086;
+  --palette-mint: color-mix(in srgb, var(--palette-sage) 70%, var(--palette-honey) 30%);
 
   /* Typography only (not counted toward the four UI colors) */
   --color-ink: #1a1a1a;
   --color-body: #3a3a3a;
   --color-muted: #5a5a5a;
 
-  /* UI tokens — rgba channels restricted to the four palette hues */
-  --color-border: rgba(237, 201, 153, 0.65);
-  --color-accent-dim: rgba(237, 201, 153, 0.45);
-  --shadow-soft: 0 16px 40px rgba(253, 198, 198, 0.22);
-  --shadow-lift: 0 20px 48px rgba(182, 227, 168, 0.3);
+  /* UI tokens — rgba derived from the palette */
+  --color-border: rgba(223, 204, 177, 0.65);
+  --color-accent-dim: rgba(223, 204, 177, 0.45);
+  --shadow-soft: 0 16px 40px rgba(167, 109, 94, 0.2);
+  --shadow-lift: 0 20px 48px rgba(152, 160, 134, 0.3);
 
   --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-body: "Libre Baskerville", Georgia, serif;
@@ -71,8 +71,8 @@ body {
   color: var(--color-body);
   background-color: var(--palette-sage);
   background-image:
-    radial-gradient(ellipse 90% 60% at 10% 0%, rgba(253, 198, 198, 0.35), transparent 50%),
-    radial-gradient(ellipse 70% 50% at 100% 20%, rgba(182, 227, 168, 0.4), transparent 55%),
+    radial-gradient(ellipse 90% 60% at 10% 0%, rgba(167, 109, 94, 0.35), transparent 50%),
+    radial-gradient(ellipse 70% 50% at 100% 20%, rgba(152, 160, 134, 0.4), transparent 55%),
     linear-gradient(180deg, var(--palette-mint) 0%, var(--palette-sage) 45%, var(--palette-honey) 100%);
   min-height: 100vh;
 }
@@ -88,8 +88,8 @@ body::before {
     -12deg,
     transparent,
     transparent 14px,
-    rgba(253, 198, 198, 0.08) 14px,
-    rgba(253, 198, 198, 0.08) 15px
+    rgba(167, 109, 94, 0.08) 14px,
+    rgba(167, 109, 94, 0.08) 15px
   );
 }
 
@@ -117,11 +117,11 @@ body::before {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(229, 231, 164, 0.35) 18%,
+    rgba(223, 204, 177, 0.35) 18%,
     var(--palette-petal) 38%,
     var(--palette-honey) 50%,
     var(--palette-mint) 62%,
-    rgba(229, 231, 164, 0.35) 82%,
+    rgba(223, 204, 177, 0.35) 82%,
     transparent 100%
   );
   transform: skewX(-12deg) scaleX(1.08);
@@ -150,8 +150,8 @@ body::before {
     -18deg,
     transparent,
     transparent 12px,
-    rgba(182, 227, 168, 0.14) 12px,
-    rgba(182, 227, 168, 0.14) 14px
+    rgba(152, 160, 134, 0.14) 12px,
+    rgba(152, 160, 134, 0.14) 14px
   );
 }
 
@@ -175,10 +175,10 @@ body::before {
 }
 
 .site-header.is-scrolled {
-  background: rgba(229, 231, 164, 0.88);
+  background: rgba(223, 204, 177, 0.88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 10px 36px rgba(182, 227, 168, 0.35);
+  box-shadow: 0 10px 36px rgba(152, 160, 134, 0.35);
 }
 
 .header-inner {
@@ -267,7 +267,7 @@ body::before {
   gap: var(--space-2xs);
   margin-left: var(--space-md);
   padding: var(--space-2xs) var(--space-sm);
-  background: rgba(237, 201, 153, 0.14);
+  background: rgba(223, 204, 177, 0.14);
   border: 1px solid var(--color-accent-dim);
   border-radius: 2px;
   color: var(--color-ink);
@@ -281,7 +281,7 @@ body::before {
 }
 
 .header-phone:hover {
-  background: rgba(237, 201, 153, 0.26);
+  background: rgba(223, 204, 177, 0.26);
   border-color: var(--palette-petal);
 }
 
@@ -529,27 +529,27 @@ body::before {
   background: transparent;
   color: var(--color-ink);
   border-color: var(--palette-petal);
-  box-shadow: 0 0 0 0 rgba(237, 201, 153, 0);
+  box-shadow: 0 0 0 0 rgba(223, 204, 177, 0);
 }
 
 .btn-primary:hover {
   background: linear-gradient(135deg, var(--palette-mint), var(--palette-honey));
   color: var(--color-ink);
   border-color: var(--palette-sage);
-  box-shadow: 0 10px 32px rgba(182, 227, 168, 0.35);
+  box-shadow: 0 10px 32px rgba(152, 160, 134, 0.35);
   transform: translateY(-2px);
 }
 
 .btn-secondary {
   background: transparent;
   color: var(--color-ink);
-  border-color: rgba(229, 231, 164, 0.75);
+  border-color: rgba(223, 204, 177, 0.75);
 }
 
 .btn-secondary:hover {
   border-color: var(--palette-petal);
   color: var(--color-ink);
-  background: rgba(229, 231, 164, 0.35);
+  background: rgba(223, 204, 177, 0.35);
 }
 
 .btn-block {
@@ -575,7 +575,7 @@ body::before {
   align-items: center;
   gap: var(--space-sm);
   padding: var(--space-xs) var(--space-sm);
-  background: rgba(229, 231, 164, 0.45);
+  background: rgba(223, 204, 177, 0.45);
   border: 1px solid var(--palette-petal);
   border-radius: 2px;
   font-size: 0.78rem;
@@ -618,7 +618,7 @@ body::before {
   position: relative;
   z-index: 2;
   border-bottom: 1px solid var(--palette-petal);
-  background: rgba(237, 201, 153, 0.55);
+  background: rgba(223, 204, 177, 0.55);
   backdrop-filter: blur(8px);
 }
 
@@ -629,7 +629,7 @@ body::before {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, transparent, rgba(253, 198, 198, 0.45), rgba(237, 201, 153, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(167, 109, 94, 0.45), rgba(223, 204, 177, 0.5), transparent);
   transform: skewX(-10deg);
   opacity: 0.7;
 }
@@ -736,8 +736,8 @@ main > section:not(.hero) {
 .service-card {
   position: relative;
   z-index: 1;
-  background: rgba(182, 227, 168, 0.35);
-  border: 1px solid rgba(237, 201, 153, 0.75);
+  background: rgba(152, 160, 134, 0.35);
+  border: 1px solid rgba(223, 204, 177, 0.75);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
   transition:
@@ -754,7 +754,7 @@ main > section:not(.hero) {
 
 .service-card:hover .service-icon {
   color: var(--palette-petal);
-  background: rgba(182, 227, 168, 0.18);
+  background: rgba(152, 160, 134, 0.18);
 }
 
 .service-icon {
@@ -763,7 +763,7 @@ main > section:not(.hero) {
   display: grid;
   place-items: center;
   border-radius: var(--radius-md);
-  background: rgba(229, 231, 164, 0.2);
+  background: rgba(223, 204, 177, 0.2);
   color: var(--palette-honey);
   margin-bottom: var(--space-md);
   transition:
@@ -826,7 +826,7 @@ main > section:not(.hero) {
   width: 2rem;
   height: 2rem;
   border-radius: 2px;
-  background: rgba(182, 227, 168, 0.35);
+  background: rgba(152, 160, 134, 0.35);
   color: var(--color-ink);
   display: grid;
   place-items: center;
@@ -872,8 +872,8 @@ main > section:not(.hero) {
 .testimonial-card {
   margin: 0;
   padding: var(--space-md) var(--space-lg);
-  background: rgba(229, 231, 164, 0.55);
-  border: 1px solid rgba(237, 201, 153, 0.85);
+  background: rgba(223, 204, 177, 0.55);
+  border: 1px solid rgba(223, 204, 177, 0.85);
   border-radius: var(--radius-md);
   color: var(--color-body);
   transition:
@@ -883,7 +883,7 @@ main > section:not(.hero) {
 
 .testimonial-card:hover {
   border-color: var(--palette-mint);
-  background: rgba(182, 227, 168, 0.45);
+  background: rgba(152, 160, 134, 0.45);
 }
 
 .testimonial-quote {
@@ -955,8 +955,8 @@ main > section:not(.hero) {
 }
 
 .quote-form {
-  background: rgba(182, 227, 168, 0.25);
-  border: 1px solid rgba(237, 201, 153, 0.8);
+  background: rgba(152, 160, 134, 0.25);
+  border: 1px solid rgba(223, 204, 177, 0.8);
   border-radius: var(--radius-xl);
   padding: var(--space-lg);
   display: flex;
@@ -983,8 +983,8 @@ main > section:not(.hero) {
   font-size: 0.95rem;
   padding: var(--space-sm);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(237, 201, 153, 0.75);
-  background: rgba(229, 231, 164, 0.55);
+  border: 1px solid rgba(223, 204, 177, 0.75);
+  background: rgba(223, 204, 177, 0.55);
   color: var(--color-ink);
   width: 100%;
 }
@@ -1030,7 +1030,7 @@ main > section:not(.hero) {
 }
 
 .logo-mark--footer {
-  border-color: rgba(237, 201, 153, 0.55);
+  border-color: rgba(223, 204, 177, 0.55);
 }
 
 .footer-brand strong {
