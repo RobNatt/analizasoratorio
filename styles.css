@@ -105,9 +105,9 @@ body::before {
 .page-home .hero {
   background: linear-gradient(
     165deg,
-    var(--palette-honey) 0%,
-    var(--palette-sage) 42%,
-    var(--palette-mint) 100%
+    color-mix(in srgb, var(--palette-honey) 88%, white 12%) 0%,
+    var(--palette-honey) 38%,
+    color-mix(in srgb, var(--palette-honey) 82%, var(--palette-petal) 18%) 100%
   );
 }
 
