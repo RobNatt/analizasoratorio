@@ -1,5 +1,5 @@
-/* Lead delivery: create a free form at https://formspree.io and paste its POST URL below (e.g. https://formspree.io/f/xyzabc). Deploy with this file on the server. Leave empty to show a thank-you plus call fallback until configured. */
+/* FormSubmit delivers to the address in the URL. First submission may require activating the form from an email they send to that inbox. */
 (function (w) {
   "use strict";
-  w.LEAD_FORM_ENDPOINT = "";
+  w.LEAD_FORM_ENDPOINT = "https://formsubmit.co/ajax/edzen1968@gmail.com";
 })(window);

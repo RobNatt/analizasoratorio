@@ -93,6 +93,36 @@ body::before {
   );
 }
 
+/* Homepage only: beige wash at top, sage emphasis toward footer (inverse of default page backdrop) */
+.page-home {
+  background-color: var(--palette-honey);
+  background-image:
+    radial-gradient(ellipse 90% 60% at 10% 0%, rgba(167, 109, 94, 0.3), transparent 50%),
+    radial-gradient(ellipse 70% 50% at 100% 20%, rgba(223, 204, 177, 0.5), transparent 55%),
+    linear-gradient(180deg, var(--palette-honey) 0%, var(--palette-sage) 42%, var(--palette-mint) 100%);
+}
+
+.page-home .hero {
+  background: linear-gradient(
+    165deg,
+    var(--palette-honey) 0%,
+    var(--palette-sage) 42%,
+    var(--palette-mint) 100%
+  );
+}
+
+.page-home .contact {
+  background: linear-gradient(165deg, var(--palette-honey) 0%, var(--palette-sage) 45%, var(--palette-mint) 100%);
+}
+
+.page-home .site-footer {
+  background: var(--palette-sage);
+}
+
+.page-home .logo-mark--footer {
+  border-color: rgba(223, 204, 177, 0.65);
+}
+
 .skip-link {
   position: absolute;
   top: -100px;

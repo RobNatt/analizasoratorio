@@ -56,6 +56,20 @@
 
       var phone = "(757) 968-3769";
 
+      /** FormSubmit /ajax/ expects JSON; Formspree accepts multipart FormData. */
+      function isJsonFormEndpoint(url) {
+        return /formsubmit\.co\/ajax\//i.test(url);
+      }
+
+      function formDataToPayload(fd) {
+        var payload = {};
+        fd.forEach(function (value, key) {
+          if (key === "_gotcha") return;
+          if (value !== null && value !== "") payload[key] = value;
+        });
+        return payload;
+      }
+
       function thanksNoEmail() {
         formStatus.textContent =
           "Thank you. Please call " +
@@ -80,13 +94,35 @@
         return;
       }
 
+      var gotcha = fd.get("_gotcha");
+      if (gotcha && String(gotcha).trim() !== "") {
+        form.reset();
+        return;
+      }
+
       formStatus.textContent = "Sending…";
 
-      fetch(endpoint, {
-        method: "POST",
-        body: fd,
-        headers: { Accept: "application/json" },
-      })
+      var reqInit;
+      if (isJsonFormEndpoint(endpoint)) {
+        var payload = formDataToPayload(fd);
+        if (sourceTag) payload.form_source = sourceTag;
+        reqInit = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(payload),
+        };
+      } else {
+        reqInit = {
+          method: "POST",
+          body: fd,
+          headers: { Accept: "application/json" },
+        };
+      }
+
+      fetch(endpoint, reqInit)
         .then(function (res) {
           if (!res.ok) throw new Error("bad status");
           return res.json().catch(function () {
@@ -103,5 +139,5 @@
   }
 
   wireLeadForm("quote-form", "form-status", "home_contact");
-  wireLeadForm("about-quote-form", "about-form-status", "about_whole_life");
+  wireLeadForm("about-quote-form", "about-form-status", "whole_life_insurance");
 })();
