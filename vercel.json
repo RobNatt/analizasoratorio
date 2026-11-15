@@ -1,7 +1,3 @@
 {
-  "cleanUrls": true,
-  "redirects": [
-    { "source": "/about", "destination": "/whole-life-insurance", "permanent": true },
-    { "source": "/about.html", "destination": "/whole-life-insurance", "permanent": true }
-  ]
+  "cleanUrls": true
 }

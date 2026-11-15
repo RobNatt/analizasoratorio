@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://analizasoratorio.com/sitemap.xml
+Sitemap: https://www.worldfinancialgroupsoratorio.com/sitemap.xml
