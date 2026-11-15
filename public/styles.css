@@ -1272,3 +1272,13 @@ picture {
 .footer-disclosure p {
   margin: 0 0 var(--space-2xs);
 }
+
+/* Missing details waiting on Analiza: deliberately loud so nobody misses them. */
+mark.placeholder {
+  background: #ffe600;
+  color: #000;
+  font-weight: 700;
+  padding: 0 0.3em;
+  border: 2px dashed #d40000;
+  border-radius: 3px;
+}
