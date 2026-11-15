@@ -1199,3 +1199,76 @@ main > section:not(.hero) {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* ——— SEO rebuild additions ——— */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+picture {
+  display: block;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.service-card a,
+.why-more a,
+.guides-home-more a {
+  color: var(--palette-petal);
+  font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+  .service-grid.service-grid--two {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.guides-home-more {
+  max-width: 1200px;
+  margin: var(--space-md) auto 0;
+  text-align: center;
+}
+
+.steps {
+  padding: var(--space-2xl) var(--space-md);
+}
+
+.steps-list {
+  max-width: 48rem;
+  margin: var(--space-lg) auto 0;
+  padding-left: 1.5rem;
+  display: grid;
+  gap: var(--space-sm);
+  color: var(--color-body);
+  line-height: 1.7;
+}
+
+.steps-list strong {
+  color: var(--color-ink);
+}
+
+.footer-disclosure {
+  max-width: 1200px;
+  margin: var(--space-lg) auto 0;
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(167, 109, 94, 0.35);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--color-body);
+}
+
+.footer-disclosure p {
+  margin: 0 0 var(--space-2xs);
+}
